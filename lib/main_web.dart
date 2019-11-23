@@ -111,7 +111,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
           builder: (context, child) => Stack(
             children: [
               Positioned(
-                top: 50,
+                top: 15,
                 left: 0,
                 height: 800,
                 width: size.width,
@@ -119,13 +119,12 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                   angle: math.pi * 2 * animationController.value,
                   child: Opacity(
                     child: Image.asset('assets/iphone.png'),
-                    opacity: 1 - animationController.value,
+                    opacity: (.99 - animationController.value).abs(),
                   ),
                 ),
               ),
               Positioned(
                 top: (size.height / 2 - 200),
-                left: 0,
                 height: 200,
                 width: size.width,
                 child: ClipPath(
